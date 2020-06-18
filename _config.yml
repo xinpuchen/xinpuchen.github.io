@@ -1,0 +1,203 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: Xinpu's Blog
+subtitle: Welcome to my blog!
+keywords: xinpuchen,陈鑫谱,昕普,昕普同学,front-notes,awesome-coding,JavaScript,Node,React,Git,Python,SQL,Linux,前端,计算机网络,云计算,Iot,AI,Docker,K8S,DevOps,CI/CD
+description: 记录工作和学习中，关于前端、运维和现代互联网世界相关的信息
+author: 昕普同学
+language: zh-cn
+timezone: Asia/Shanghai
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://xinpuchen.github.io
+root: /
+permalink: :title/
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+auto_spacing: true
+titlecase: true # Transform title into titlecase
+external_link:
+  enable: true # Open external links in new tab
+  field: site
+  exclude: []
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: false
+  auto_detect: true
+  tab_replace: ""
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+## Use post's date for updated date unless set in front-matter
+use_date_for_updated: false
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 0
+pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: even
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: https://github.com/xinpuchen/xinpuchen.github.io.git
+
+theme_config:
+  # Site creation time
+  since: 2018
+
+  # Custom your favicon.ico in `site/source`
+  favicon: /images/favicon.ico
+
+  # Set feed link (false | default | your feed link)
+  false: default
+  # default: use `atom.xml`, generator for `hexo-generator-feed`
+  rss: default
+
+  # ===========================================
+  # Menu Settings
+  # ===========================================
+  menu:
+    Home: /
+    Archives: /archives/
+    Categories: /categories/
+    Tags: /tags/
+    前端笔记: https://xinpuchen.top/frontend-notes/
+    算法练习: https://xinpuchen.top/awesome-coding/
+    About: /about/
+
+  # ===========================================
+  # Theme Settings
+  # ===========================================
+  # color: default | mint green | cobalt blue | hot pink | dark violet
+  color: mint green
+
+  # default page mode: default | archives
+  mode: default
+
+  toc: true
+
+  # jQuery fancybox
+  fancybox: true
+
+  # LaTeX support (via MathJax)
+  latex: true
+
+  copyright:
+    enable: true
+    # https://creativecommons.org/
+    license: '<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>'
+
+  reward:
+    enable: false
+    qrCode:
+      wechat:
+      alipay:
+
+  # ===========================================
+  # Social links Settings
+  # ===========================================
+  social:
+    email: xinpuchen@foxmail.com
+    stack-overflow:
+    twitter:
+    facebook:
+    linkedin: https://www.linkedin.com/in/xinpuchen
+    google:
+    github: https://github.com/xinpuchen
+    weibo:
+    zhihu:
+    douban:
+    pocket:
+    tumblr:
+    instagram:
+
+  # ===========================================
+  # Third Party Services Settings
+  # ===========================================
+
+  # LeanCloud
+  leancloud:
+    app_id:
+    app_key:
+
+  # Baidu Analytics
+  baidu_analytics:
+  # Baidu Verification
+  baidu_verification:
+
+  # Google Analytics
+  google_analytics:
+  # Google Verification
+  google_verification:
+
+  # Disqus
+  disqus_shortname: xinpuchen
+
+  #Changyan
+  changyan:
+    appid:
+    appkey:
+
+  #LiveRe
+  livere_datauid:
+
+  # Gitalk
+  # Demo: https://gitalk.github.io
+  # https://github.com/gitalk/gitalk
+  gitalk:
+    enable: true
+    github_id: GitHub repo owner
+    repo: GitHub repo
+    client_id: GitHub Application Client ID
+    client_secret: GitHub Application Client Secret
+    admin_user: GitHub repo owner and collaborators, only these guys can initialize github issues
+    distraction_free_mode: true # Facebook-like distraction free mode
+    # Gitalk's display language depends on user's browser or system environment
+    # If you want everyone visiting your site to see a uniform language, you can set a force language value
+    # Available values: en, es-ES, fr, ru, zh-CN, zh-TW
+    language: zh-CN
+
+  # ===========================================
+  # Version
+  # ===========================================
+  version: 2.11.0
