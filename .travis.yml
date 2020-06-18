@@ -1,0 +1,23 @@
+language: node_js
+node_js: stable
+cache:
+  directories:
+    - node_modules
+branches:
+  only:
+    - dev
+before_install:
+  - git submodule update --init --recursive
+install:
+  - npm i
+script:
+  - npm run build
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  target_branch: master
+  on:
+    branch: dev
+  local-dir: public
