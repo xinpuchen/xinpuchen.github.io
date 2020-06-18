@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="为什么选择Hook而非……?"/><meta name="keywords" content="xinpuchen,陈鑫谱,昕普,昕普同学,front-notes,awesome-coding,JavaScript,Node,React,Git,Python,SQL,Linux,前端,计算机网络,云计算,Iot,AI,Docker,K8S,DevOps,CI/CD" /><link rel="alternate" href="/atom.xml" title="Xinpu's Blog"><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=2.11.0" />
+<link rel="canonical" href="https://xinpuchen.github.io/Why-Isn’t-X-a-Hook/"/>
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" /><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+  </script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
+
+<script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":true};
+</script>
+
+    <title>为什么选择Hook而非……? - Xinpu's Blog</title>
+  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Xinpu's Blog" type="application/atom+xml">
+</head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Xinpu's Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">首页
+          </li>
+      </a><a href="/archives/">
+        <li class="mobile-menu-item">归档
+          </li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类
+          </li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签
+          </li>
+      </a><a href="https://xinpuchen.top/frontend-notes/" target="_blank" rel="noopener">
+        <li class="mobile-menu-item">前端笔记
+          </li>
+      </a><a href="https://xinpuchen.top/awesome-coding/" target="_blank" rel="noopener">
+        <li class="mobile-menu-item">算法练习
+          </li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Xinpu's Blog</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            首页
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            归档
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            分类
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            标签
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="https://xinpuchen.top/frontend-notes/" target="_blank" rel="noopener">
+            前端笔记
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="https://xinpuchen.top/awesome-coding/" target="_blank" rel="noopener">
+            算法练习
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about/">
+            关于
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">为什么选择Hook而非……?
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-02-10
+        </span><span class="post-category">
+            <a href="/categories/React/">React</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-Hook：useState"><span class="toc-text">使用 Hook：useState()</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#构成-Composition"><span class="toc-text">构成 Composition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#调试-Debugging"><span class="toc-text">调试 Debugging</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不应使用-Hook：useBailout"><span class="toc-text">不应使用 Hook：useBailout()</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#构成-Composition-1"><span class="toc-text">构成 Composition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#调试-Debugging-1"><span class="toc-text">调试 Debugging</span></a></li></ol></li></ol>
+    </div>
+  </div><div class="post-content"><p>自从第一个关于<a href="https://reactjs.org/hooks" target="_blank" rel="noopener">React Hooks</a>的 alpha 版本发布以来，有一个问题不断出现在讨论中：“为什么是 Hook 而非 _&lt;一些其他的 API&gt;_ ？”</p>
+<p>提示一下，以下的这些就<em>是</em>Hooks：</p>
+<ul>
+<li><a href="https://reactjs.org/docs/hooks-reference.html#usestate" target="_blank" rel="noopener"><code>useState()</code></a> 用于声明一个状态变量。</li>
+<li><a href="https://reactjs.org/docs/hooks-reference.html#useeffect" target="_blank" rel="noopener"><code>useEffect()</code></a> 用于声明一个补充规则(side effect)。</li>
+<li><a href="https://reactjs.org/docs/hooks-reference.html#usecontext" target="_blank" rel="noopener"><code>useContext()</code></a> 用于读取一些上下文的内容。</li>
+</ul>
+<a id="more"></a>
+
+<p>但是仍有一些其他的 API，例如<code>React.memo()</code>和<code>&lt;Context.Provider&gt;</code>，它们<em>不是</em>Hooks。通常提出的 Hook 版本会建议是<em>noncompositional</em>或者<em>antimodular</em>。本文将帮助你了解原因。</p>
+<p><strong>提示：这篇文章对那些对 API 讨论感兴趣的人来说是一个深刻的话题，你不需要考虑使用 React 来提升效率！</strong></p>
+<hr>
+<p>我们希望 React API 保留两个重要属性：</p>
+<ol>
+<li><strong>构成 Composition:</strong> <a href="https://reactjs.org/docs/hooks-custom.html" target="_blank" rel="noopener">定制 Hooks</a>很大程度上是我们对 Hooks API 感到兴奋的原因。我们希望大家可以频繁的构建自己的 Hooks，并且我们需要保证不同人写的 Hooks<a href="https://overreacted.io/why-do-hooks-rely-on-call-order/#flaw-4-the-diamond-problem" target="_blank" rel="noopener">不会发生冲突</a>。（我们大概会被编写清爽且不会相互破坏的组件这样的体验宠坏吧！）</li>
+<li><strong>调试 Debugging:</strong> 我们希望随着程序的增长，Bugs<a href="/archives/algorithm/1549245751.html">很容易找到</a>。React 的最佳特征之一就是——如果你看到呈现出了任何错误，都能够通过结构树找到那个组件的 prop 或 state 导致的错误。</li>
+</ol>
+<p>这两个约束放在一起可以告诉我们什么可以或<em>不可以</em>使用 Hook。让我们看几个例子。</p>
+<hr>
+<h2 id="使用-Hook：useState"><a href="#使用-Hook：useState" class="headerlink" title="使用 Hook：useState()"></a>使用 Hook：<code>useState()</code></h2><h3 id="构成-Composition"><a href="#构成-Composition" class="headerlink" title="构成 Composition"></a>构成 Composition</h3><p>每个调用<code>useState()</code>的多个自定义 Hook 都不会冲突：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">useMyCustomHook1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [value, setValue] = useState(<span class="number">0</span>);</span><br><span class="line">  <span class="comment">// What happens here, stays here.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">useMyCustomHook2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [value, setValue] = useState(<span class="number">0</span>);</span><br><span class="line">  <span class="comment">// What happens here, stays here.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyComponent</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  useMyCustomHook1();</span><br><span class="line">  useMyCustomHook2();</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>添加一个新的无条件<code>useState()</code>调用总是安全的。你不需要了解组件用于声明新状态变量的其他 Hook，也不能通过更新其中一个来破坏其他的状态变量。</p>
+<p><strong>结论：</strong> ✅ <code>useState()</code>不会使自定义 Hook 易碎。</p>
+<h3 id="调试-Debugging"><a href="#调试-Debugging" class="headerlink" title="调试 Debugging"></a>调试 Debugging</h3><p>钩子会很有用，因为你可以用过它<em>传递</em>值：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">useWindowWidth</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [width, setWidth] = useState(<span class="built_in">window</span>.innerWidth);</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="keyword">return</span> width;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">useTheme</span>(<span class="params">isMobile</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Comment</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> width = useWindowWidth();</span><br><span class="line">  <span class="keyword">const</span> isMobile = width &lt; MOBILE_VIEWPORT;</span><br><span class="line">  <span class="keyword">const</span> theme = useTheme(isMobile);</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">section</span> <span class="attr">className</span>=<span class="string">&#123;theme.comment&#125;</span>&gt;</span>&#123;/* ... */&#125;<span class="tag">&lt;/<span class="name">section</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但是如果我们犯错了呢？该如何调试？</p>
+<p>假设我们从<code>theme.comment</code>获得的 CSS 类是错误的，我们该如何调试？我们可以在组件的主体中设置断点或几个日志输出。</p>
+<p>也许我们会看到<code>theme</code>错误但是<code>width</code>和<code>isMobile</code>是正确的。这会告诉我们问题是<code>useTheme()</code>中的。或者也许我们会看到<code>width</code>本身就是错的，那我们就应该查看<code>useWindowWidth()</code>。</p>
+<p><strong>单独查看中间值会告诉我们顶层的那些 Hook 包含 Bug。</strong>我们不需要查看他们<em>所有的</em>实现。</p>
+<p>然后我们可以“放大”有 Bug 的部分并尝试复现。</p>
+<p>随着自定义 Hook 嵌套的深度增加，这会变得更加重要。想象我们有 3 个级别的自定义 Hook 嵌套，每个级别使用 3 个不同的自定义 Hooks。寻找<strong>3 处</strong>与潜在检查<strong>3 + 3×3 + 3×3×3 = 39 处</strong>之间的<a href="/archives/algorithm/1549245751.html">差异</a>是巨大的。幸运的是，<code>useState()</code>不能神奇的“影响”其他钩子或组件，它返回的错误值会在它后面留下一条痕迹，就像任何变量一样。🐛</p>
+<p><strong>结论：</strong> ✅ <code>useState()</code>不会遮掩我们代码中的因果关系，我们可以直接通过痕迹追踪到 Bug。</p>
+<hr>
+<h2 id="不应使用-Hook：useBailout"><a href="#不应使用-Hook：useBailout" class="headerlink" title="不应使用 Hook：useBailout()"></a>不应使用 Hook：<code>useBailout()</code></h2><p>作为优化，使用 Hooks 的组件可以避免重新渲染。</p>
+<p>一种方法是将整个组件周围方式一个<a href="https://reactjs.org/blog/2018/10/23/react-v-16-6.html#reactmemo" target="_blank" rel="noopener"><code>React.memo()</code></a>包装器。如果 props 与我们在上一次渲染的过程中的 props 非常相等，他就会失去重新渲染的效果，这很类似<code>PureComponent</code>类。</p>
+<p><code>React.memo()</code>接受一个组件并返回一个组件：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Button</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> React.memo(Button);</span><br></pre></td></tr></table></figure>
+
+<p><strong>但是为什么它不仅是个 Hook?</strong></p>
+<p>无论你将它成为<code>useShouldComponentUpdate()</code>，<code>usePure()</code>，<code>useSkipRender()</code>或<code>useBailout()</code>，这个体验往往看起来是这样的：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Button</span>(<span class="params">&#123; color &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ⚠️ Not a real API</span></span><br><span class="line">  useBailout(<span class="function"><span class="params">prevColor</span> =&gt;</span> prevColor !== color, color);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">className</span>=<span class="string">&#123;</span>"<span class="attr">button-</span>" + <span class="attr">color</span>&#125;&gt;</span>OK<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>还有一些变化（eg：一个简单的<code>usePure()</code>标记）但是在广泛的笔划中他们具有相同的缺陷。</p>
+<h3 id="构成-Composition-1"><a href="#构成-Composition-1" class="headerlink" title="构成 Composition"></a>构成 Composition</h3><p>假设我们尝试将<code>useBailout()</code>放在两个自定义 Hooks 中：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">useFriendStatus</span>(<span class="params">friendID</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [isOnline, setIsOnline] = useState(<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// ⚠️ Not a real API  useBailout(prevIsOnline =&gt; prevIsOnline !== isOnline, isOnline);</span></span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> handleStatusChange = <span class="function"><span class="params">status</span> =&gt;</span> setIsOnline(status.isOnline);</span><br><span class="line">    ChatAPI.subscribe(friendID, handleStatusChange);</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> ChatAPI.unsubscribe(friendID, handleStatusChange);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> isOnline;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">useWindowWidth</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [width, setWidth] = useState(<span class="built_in">window</span>.innerWidth);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// ⚠️ Not a real API  useBailout(prevWidth =&gt; prevWidth !== width, width);</span></span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> handleResize = <span class="function"><span class="params">()</span> =&gt;</span> setWidth(<span class="built_in">window</span>.innerWidth);</span><br><span class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">"resize"</span>, handleResize);</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">window</span>.removeEventListener(<span class="string">"resize"</span>, handleResize);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> width;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>现在如果你在同一个组件使用它们会发生什么？</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ChatThread</span>(<span class="params">&#123; friendID, isTyping &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> width = useWindowWidth();</span><br><span class="line">  <span class="keyword">const</span> isOnline = useFriendStatus(friendID);</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;ChatLayout width=&#123;width&#125;&gt;</span><br><span class="line">      &lt;FriendStatus isOnline=&#123;isOnline&#125; /&gt;</span><br><span class="line">      &#123;isTyping &amp;&amp; <span class="string">"Typing..."</span>&#125;</span><br><span class="line">    &lt;<span class="regexp">/ChatLayout&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>什么时候重新渲染？</p>
+<p>如果每个<code>useBailout()</code>调用都有权跳过更新，那么来自<code>useWindowWidth()</code>的更新将被<code>useFriendStatus()</code>阻塞，反之亦然。<strong>这些 Hook 会相互破坏。</strong></p>
+<p>但是，如果<code>useBailout()</code>尽在单个组件内的<em>所有</em>调用“同意”阻止更新时才能使用，那么我们的<code>ChatThread</code>将无法更新<code>isTyping</code>prop 的更改。</p>
+<p>更糟糕的是，使用这些语义<strong>任何新添加到 ChatThread 的 Hook 如果没有调用 useBailout()将会损坏</strong>。否则，他们不能“反对”使用<code>useWindowWidth()</code>和 <code>useFriendStatus()</code>救助。</p>
+<p><strong>结论：</strong> 🔴 <code>useBailout()</code>打破了构建方式，将其添加到 Hook 会破坏其他 Hook 的状态更新。我们希望 API 可以具有<a href="https://overreacted.io/optimized-for-change/" target="_blank" rel="noopener">防碎性</a>，而这种行为却背道而驰。</p>
+<h3 id="调试-Debugging-1"><a href="#调试-Debugging-1" class="headerlink" title="调试 Debugging"></a>调试 Debugging</h3><p>像<code>useBailout()</code>这样的 Hook 如何影响调试？</p>
+<p>我们将使用相同的示例：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ChatThread</span>(<span class="params">&#123; friendID, isTyping &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> width = useWindowWidth();</span><br><span class="line">  <span class="keyword">const</span> isOnline = useFriendStatus(friendID);</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;ChatLayout width=&#123;width&#125;&gt;</span><br><span class="line">      &lt;FriendStatus isOnline=&#123;isOnline&#125; /&gt;</span><br><span class="line">      &#123;isTyping &amp;&amp; <span class="string">"Typing..."</span>&#125;</span><br><span class="line">    &lt;<span class="regexp">/ChatLayout&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>当我们期望<code>Typing...</code>标签不会出现，即便在上层的 prop 正在发生变化。我们该怎么调试？</p>
+<p><strong>通常，在 React 中你自信可以通过查找来给出确切的回答。</strong>如果<code>ChatThread</code>没能得到一个新的<code>isTyping</code>值，我们可以打开呈现<code>&lt;ChatThread isTyping={myVar} /&gt;</code>的组件并检查<code>myVar</code>，以此类推。在其中一个级别，我们要么找到一个错误的<code>shouldComponentUpdate()</code>救助，要么传递不正确的<code>isTyping</code>值。一看链中的每个组件通常足以追寻到问题的根源。</p>
+<p>但是如果这个<code>useBailout()</code>Hook 是真的，你永远也不会知道更新被跳过的原因，知道你检查我们的<code>ChatThread</code>及其所有者链中的组件使用的<em>每个自定义 Hook</em>（的深度）。由于每个父组件也可以使用自定义 Hook，因此<a href="/archives/algorithm/1549245751.html">拓展</a>非常糟糕。</p>
+<p>就像你在抽屉里寻找一把螺丝刀一样，每个抽绎都有一堆较小的抽屉柜，你不知道兔子洞有多深。</p>
+<p><strong>结论：</strong> 🔴 <code>useBailout()</code>Hook 不仅打破了构建，更大大增加了调试步骤和求助所需的认知门槛——在某些情况下，呈指数式增加。</p>
+<hr>
+<p>我们只看到了一个真正的 Hook，<code>useState()</code>，还有一个关于<em>不该使用</em>Hook 的常规建议——<code>useBailout()</code>。我们通过构建和调试的棱镜对他们进行了比较，讨论了它们中工作与否的原因。</p>
+<p>虽然没有<code>memo()</code>和<code>shouldComponentUpdate()</code>的“Hook 版本”，但 React<em>会</em>提供一个 Hook 调用<a href="https://reactjs.org/docs/hooks-reference.html#usememo" target="_blank" rel="noopener"><code>useMemo()</code></a>的方法。它有类似的用途，但它语义不同，并不会遭遇上述陷阱。</p>
+<p><code>useBailout()</code>只是一个不该使用 Hook 工作的例子，还有很多类似的——例如：<code>useProvider()</code>，<code>useCatch()</code>或<code>useSuspense()</code>。</p>
+<p>你明白为什么吗？</p>
+<p><em>（小声：组成…调试…）</em></p>
+<p><a href="https://mobile.twitter.com/search?q=https%3A%2F%2Foverreacted.io%2Fwhy-isnt-x-a-hook%2F" target="_blank" rel="noopener">Discuss on Twitter</a> • <a href="https://github.com/gaearon/overreacted.io/edit/master/src/pages/why-isnt-x-a-hook/index.md" target="_blank" rel="noopener">Edit on GitHub</a></p>
+<p>原文链接： <a href="https://overreacted.io/why-isnt-x-a-hook/" target="_blank" rel="noopener">Why Isn’t X a Hook?</a></p>
+
+      </div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://xinpuchen.github.io">昕普同学</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://xinpuchen.github.io/Why-Isn%E2%80%99t-X-a-Hook/">https://xinpuchen.github.io/Why-Isn%E2%80%99t-X-a-Hook/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/React/">React</a>
+            <a href="/tags/Hooks/">Hooks</a>
+            </div>
+        
+        <nav class="post-nav"><a class="prev" href="/overrides-mode/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">覆盖模式-提高 React 组件的复用率</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    <a class="next" href="/improve-react-performance-using-lazy-loading-and-suspense/">
+        <span class="next-text nav-default">使用懒加载和Suspense提高React性能</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"><div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:xinpuchen@foxmail.com" class="iconfont icon-email" title="email"></a>
+        <a href="https://www.linkedin.com/in/xinpuchen" target="_blank" rel="noopener" class="iconfont icon-linkedin" title="linkedin"></a>
+        <a href="https://github.com/xinpuchen" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even" target="_blank" rel="noopener">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2018 - 2020<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">昕普同学</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://xinpuchen.github.io/Why-Isn%E2%80%99t-X-a-Hook/';
+        this.page.identifier = 'Why-Isn’t-X-a-Hook/';
+        this.page.title = '为什么选择Hook而非……?';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//xinpuchen.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css"/>
+
+
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: 'GitHub Application Client ID',
+    clientSecret: 'GitHub Application Client Secret',
+    repo: 'GitHub repo',
+    owner: 'GitHub repo owner',
+    admin: ['GitHub repo owner and collaborators, only these guys can initialize github issues'],
+    id: md5(location.pathname),
+    
+      language: 'zh-CN',
+    
+    distractionFreeMode: 'true'
+  });
+  gitalk.render('gitalk-container');
+</script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+</body>
+</html>
