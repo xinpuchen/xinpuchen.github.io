@@ -4,10 +4,10 @@
 
 # Site
 title: Xinpu's Blog
-subtitle: Welcome to my blog!
-keywords: xinpuchen,陈鑫谱,昕普,昕普同学,front-notes,awesome-coding,JavaScript,Node,React,Git,Python,SQL,Linux,前端,计算机网络,云计算,Iot,AI,Docker,K8S,DevOps,CI/CD
-description: 记录工作和学习中，关于前端、运维和现代互联网世界相关的信息
-author: 昕普同学
+subtitle: 陈鑫谱的个人网站
+keywords: 陈鑫谱,xinpu,昕浦,xinpuchen,前端,frontend-notes,awesome-coding
+description: 记录工作和学习中，关于前端技术和科技世界的发展趋势！
+author: 昕浦
 language: zh-cn
 timezone: Asia/Shanghai
 
