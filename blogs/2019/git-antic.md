@@ -1,7 +1,7 @@
 ---
 title: git 使用小技巧
 date: 2019-01-03 00:04:15
-categories: Tool
+categories: 工具
 tags:
   - Git
 ---
@@ -25,8 +25,8 @@ git remote add origin git@github.com:wulv/scripts.git
 
 - 如果还没 git add，使用 ctrl + z 吧，如果想回到没添加文件之前，使用 git clean -df
 - 如果已经 git add，还没 commit，使用 git checkout -- files
-- 如果已经 git commit，还没有 push，使用 git reset <commit> files
-- 如果已经 git push 了，使用 git revert <commit>，恢复一个指定提交。
+- 如果已经 git commit，还没有 push，使用 git reset `<commit>` files
+- 如果已经 git push 了，使用 git revert `<commit>`，恢复一个指定提交。
 
 ### 已经添加到仓库的文件如何忽略不提交？
 
@@ -47,17 +47,17 @@ git remote add origin git@github.com:wulv/scripts.git
 - git log：查看提交记录
 - git log --oneline：查看提交记录，以 oneline 形式显示，只显示一行，显示的内容时提交 hash 的前 7 位与提交消息
 - git log -p -times：表示查看最近 times 次提交改变的内容
-- git log --author="<pattern>"： 查找某位作者的提交记录
-- git log --grep="<pattern>"：搜索有某字符串的提交记录
+- git log --author="`<pattern>`"： 查找某位作者的提交记录
+- git log --grep="`<pattern>`"：搜索有某字符串的提交记录
 - git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit：图形化显示提交历史
 
 ### 比较两次提交或分支的差异？
 
 - git diff：查看工作目录与暂存区的差异
-- git diff --cached [<commit>]：查看暂存区与指定提交（默认是 HEAD）的差异
-- git diff <commit>：查看工作目录与指定提交的差异
-- git diff <commit>：查看工作目录与指定提交的差异
-- git diff <commit> <commit>：查看两次指定提交的差异
+- git diff --cached [`<commit>`]：查看暂存区与指定提交（默认是 HEAD）的差异
+- git diff `<commit>`：查看工作目录与指定提交的差异
+- git diff `<commit>`：查看工作目录与指定提交的差异
+- git diff `<commit>` `<commit>`：查看两次指定提交的差异
 - git diff branchname：查看工作目录与指定分支的差异
 - git diff branchname branchname：查看两个指定分支间的差异
 
@@ -65,7 +65,7 @@ git remote add origin git@github.com:wulv/scripts.git
 
 ### 有两个稳定版本，将其中一个版本的功能应用到另外一个版本？
 
-比如某仓库有 VIP 版和普通版，分别在两个分支开发，普通版更新了一些功能，VIP 版也希望将更新应用到分支，但又不能直接将普通版的分支 merge 过来，这个时候使用：git cherry-pick <commit id>将另一个分支上面的指定提交应用到当前分支上。
+比如某仓库有 VIP 版和普通版，分别在两个分支开发，普通版更新了一些功能，VIP 版也希望将更新应用到分支，但又不能直接将普通版的分支 merge 过来，这个时候使用：git cherry-pick `<commit id>`将另一个分支上面的指定提交应用到当前分支上。
 
 ### 分支太多，如何批量删除一个星期之前分支？
 

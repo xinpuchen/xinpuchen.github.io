@@ -1,22 +1,27 @@
-
-# Hello.
-
-### My name is Xinpu, Chinese name is Xinpu.
-
-I am a front-end developer and I like JavaScript, TypeScript, React and NodeJS.
-
-Love open source, usually active in major open source communities, you can also find me on [Github](https://github.com/xinpuchen).
-
-In addition to front-end development, because of being in the cloud computing industry, I am also very interested in DevOps and K8S.
-
-The following are some of my accumulation in front-end work and study:
-
-- [Frontend-notes](https://github.com/xinpuchen/frontend-notes): The front-end technology is organized in blocks to create a front-end knowledge system
-- [Awesome-coding](https://github.com/xinpuchen/awesome-coding): In-depth understanding of javascript and the implementation of algorithms based on javascript for common data structures
-- [Breakpoint-upload](https://github.com/xinpuchen/breakpoint-upload): File upload components built with React, including sharding and breakpoint upload
-
-You can become friends with me and have some technical discussions with me in the following ways:
-
-- [Github](https://github.com/xinpuchen)
-- [Email](mailto:xinpu95@gmail.com)
-- [Linkedin](https://www.linkedin.com/in/xinpuchen/)
+---
+home: true
+heroText: 昕浦同学的博客
+tagline: ☀️ 记录成长的过程
+# heroImage: /hero.png
+# heroImageStyle: {
+#   maxWidth: '600px',
+#   width: '100%',
+#   display: block,
+#   margin: '9rem auto 2rem',
+#   background: '#fff',
+#   borderRadius: '1rem',
+# }
+bgImageStyle: {
+  height: '360px'
+}
+isShowTitleInHome: false
+actionText: Guide
+actionLink: /views/other/guide
+features:
+- title: Yesterday
+  details: 开发一款看着开心、写着顺手的 vuepress 博客主题
+- title: Today
+  details: 希望帮助更多的人花更多的时间在内容创作上，而不是博客搭建上
+- title: Tomorrow
+  details: 希望更多的爱好者能够参与进来，帮助这个主题更好的成长
+---

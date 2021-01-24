@@ -1,9 +1,9 @@
 ---
 title: 浏览器缓存机制
 date: 2019-06-19 11:16:57
-categories: Browser
+categories: 浏览器
 tags:
-  - Browser
+  - 浏览器
 ---
 
 Web 缓存是指一个 web 资源（如 html 页面，图片，js，数据等）存在于 web 服务器和客户端（浏览器）之间的副本。

@@ -1,13 +1,10 @@
 ---
-title: 使用懒加载和Suspense提高React性能
+title: 使用懒加载和 Suspense 提高 React 性能
+date: 2019-01-25 23:10:06
 categories: React
 tags:
   - JavaScript
   - React
-  - Performance
-  - Web Development
-  - Programming
-date: 2019-01-25 23:10:06
 ---
 
 Lazy loading💤 已经成为被广泛应用于加载提速的优化技术之一。延迟加载的前景有助于将某些 web app 出现程序性能问题的风险降至最低〽。

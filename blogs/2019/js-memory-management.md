@@ -2,12 +2,12 @@
 title: JavaScript 内存管理
 date: 2019-03-17 16:27:06
 categories:
-  - Browser
+  - 浏览器
   - JavaScript
 tags:
+  - 浏览器
   - JavaScript
-  - Web Development
-  - Storage
+  - 内存
 ---
 
 ## 什么是内存泄漏？

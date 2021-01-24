@@ -4,7 +4,7 @@ date: 2019-01-09 16:31:36
 categories: JavaScript
 tags:
   - JavaScript
-  - EvevtLoop
+  - EventLoop
 ---
 
 ## 理解 JS 的单线程的概念
