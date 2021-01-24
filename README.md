@@ -1,7 +1,7 @@
 
 # Hello.
 
-### My name is Xinpu, Chinese name is 陈鑫谱.
+### My name is Xinpu, Chinese name is Xinpu.
 
 I am a front-end developer and I like JavaScript, TypeScript, React and NodeJS.
 

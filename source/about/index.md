@@ -5,7 +5,7 @@ date: 2018-12-26 18:24:01
 
 # Hello.
 
-我叫陈鑫谱，我是一个前端开发者，我喜欢 JavaScript，TypeScript，React 和 NodeJS。
+我叫昕浦，我是一个前端开发者，我喜欢 JavaScript，TypeScript，React 和 NodeJS。
 
 热爱开源，通常活跃在各大开源社区，你可以在[Github](https://github.com/xinpuchen) 找到我。
 
