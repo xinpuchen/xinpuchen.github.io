@@ -7,9 +7,9 @@ branches:
   only:
     - dev
 install:
-  - yarn
+  - npm install
 script:
-  - yarn build
+  - npm run build
 deploy:
   provider: pages
   skip-cleanup: true
