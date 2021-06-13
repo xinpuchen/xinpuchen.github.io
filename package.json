@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "vuepress dev . --host \"localhost\"",
-    "build": "vuepress build ."
+    "build": "node build/addComment && vuepress build . && node build/delComment"
   },
   "dependencies": {
+    "gitalk": "^1.7.2",
     "vuepress": "1.7.1",
     "vuepress-theme-reco": "^1.6.1"
   },

@@ -1,0 +1,17 @@
+const fs = require('fs');
+const path = require('path');
+const findFile = require('./findFile');
+
+const rootDir = path.resolve(__dirname, '..', 'blogs');
+
+const delComment = (dir) => {
+  fs.readFile(dir, 'utf-8', (err, content) => {
+    if (err) throw err;
+    fs.writeFile(dir, content.replace(/\n \n <comment\/> \n /g, ''), (err) => {
+      if (err) throw err;
+      console.log(`del components from ${dir}`);
+    })
+  })
+}
+
+findFile(rootDir, delComment);
