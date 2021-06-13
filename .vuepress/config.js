@@ -1,7 +1,7 @@
 module.exports = {
   "title": "昕浦同学",
   "description": "昕浦同学的博客",
-  "dest": "public",
+  "dest": "dist",
   "head": [
     [
       "link",
